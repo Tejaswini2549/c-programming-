@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+ {
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n;
+        scanf("%d",&n);
+        int i,freq[n],a[n];
+        for(i=0;i<n;i++)
+        {
+            freq[i]=0;
+        }
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&a[i]);
+            freq[a[i]]++;
+        }
+         int first=0,second=0;
+        for(i=1;i<=n-2;i++)
+        {
+            if(freq[i]==2)
+            {
+                if(first==0)
+                {
+                    first=i;
+                }
+                else
+                second=i;
+            }
+        }
+        if(first>second)
+        {
+            printf("%d %d\n",second,first);
+        }
+        else
+        printf("%d %d\n",first,second);
+        
+    }
+    return 0;
+}
